@@ -30,27 +30,28 @@ def guessing_loop
   @previous_nums = []
   loop do
     if @number_of_guesses == 4
-      puts "Sorry. You're out of turns, #{@user_name}. Better luck next time."
+      puts "Sorry. You're out of turns, #{@user_name}. The number was #{@comp_num}."
+      puts "Better luck next time! 😊"
       exit
     elsif @previous_nums.include? @user_num
-      puts "Are you ok? You already guessed that number."
+      puts "Are you ok? You already guessed that number. 🤔"
       @number_of_guesses += 1
       number_collection
     elsif @user_num < @comp_num
-      puts "Your number is too low. Guess again."
+      puts "Your number is too low. Guess a higher number. 👆"
       @number_of_guesses += 1
       @previous_nums.push(@user_num)
       number_collection
     elsif @user_num > @comp_num
-      puts "Your number is too high. Guess again."
+      puts "Your number is too high. Guess a lower number. 👇"
       @number_of_guesses += 1
       @previous_nums.push(@user_num)
       number_collection
     elsif @user_num == @comp_num
-      puts "You got it, #{@user_name}!"
+      puts "You got it, #{@user_name}! 💃"
       exit
     else
-      puts "That number is not within the correct range."
+      puts "That number is not within the correct range. 😑"
       @number_of_guesses += 1
       @previous_nums.push(@user_num)
       number_collection
